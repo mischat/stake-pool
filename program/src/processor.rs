@@ -710,7 +710,7 @@ impl Processor {
 
     /// Processes `Initialize` instruction.
     #[inline(never)] // needed due to stack size violation
-    fn process_initialize(
+    pub fn process_initialize(
         program_id: &Pubkey,
         accounts: &[AccountInfo],
         epoch_fee: Fee,
@@ -954,7 +954,7 @@ impl Processor {
 
     /// Processes `AddValidatorToPool` instruction.
     #[inline(never)] // needed due to stack size violation
-    fn process_add_validator_to_pool(
+    pub fn process_add_validator_to_pool(
         program_id: &Pubkey,
         accounts: &[AccountInfo],
         raw_validator_seed: u32,
@@ -1103,7 +1103,7 @@ impl Processor {
 
     /// Processes `RemoveValidatorFromPool` instruction.
     #[inline(never)] // needed due to stack size violation
-    fn process_remove_validator_from_pool(
+    pub fn process_remove_validator_from_pool(
         program_id: &Pubkey,
         accounts: &[AccountInfo],
     ) -> ProgramResult {
@@ -1241,7 +1241,7 @@ impl Processor {
 
     /// Processes `DecreaseValidatorStake` instruction.
     #[inline(never)] // needed due to stack size violation
-    fn process_decrease_validator_stake(
+    pub fn process_decrease_validator_stake(
         program_id: &Pubkey,
         accounts: &[AccountInfo],
         lamports: u64,
@@ -1558,7 +1558,7 @@ impl Processor {
 
     /// Processes `IncreaseValidatorStake` instruction.
     #[inline(never)] // needed due to stack size violation
-    fn process_increase_validator_stake(
+    pub fn process_increase_validator_stake(
         program_id: &Pubkey,
         accounts: &[AccountInfo],
         lamports: u64,
@@ -2246,7 +2246,7 @@ impl Processor {
 
     /// Processes `UpdateValidatorListBalance` instruction.
     #[inline(always)] // needed to maximize number of validators
-    fn process_update_validator_list_balance(
+    pub fn process_update_validator_list_balance(
         program_id: &Pubkey,
         accounts: &[AccountInfo],
         start_index: u32,
@@ -2540,7 +2540,7 @@ impl Processor {
 
     /// Processes `UpdateStakePoolBalance` instruction.
     #[inline(always)] // needed to optimize number of validators
-    fn process_update_stake_pool_balance(
+    pub fn process_update_stake_pool_balance(
         program_id: &Pubkey,
         accounts: &[AccountInfo],
     ) -> ProgramResult {
@@ -2664,7 +2664,7 @@ impl Processor {
 
     /// Processes the `CleanupRemovedValidatorEntries` instruction
     #[inline(never)] // needed to avoid stack size violation
-    fn process_cleanup_removed_validator_entries(
+    pub fn process_cleanup_removed_validator_entries(
         program_id: &Pubkey,
         accounts: &[AccountInfo],
     ) -> ProgramResult {
@@ -2959,7 +2959,7 @@ impl Processor {
 
     /// Processes [DepositSol](enum.Instruction.html).
     #[inline(never)] // needed to avoid stack size violation
-    fn process_deposit_sol(
+    pub fn process_deposit_sol(
         program_id: &Pubkey,
         accounts: &[AccountInfo],
         deposit_lamports: u64,
@@ -3422,7 +3422,7 @@ impl Processor {
 
     /// Processes [WithdrawSol](enum.Instruction.html).
     #[inline(never)] // needed to avoid stack size violation
-    fn process_withdraw_sol(
+    pub fn process_withdraw_sol(
         program_id: &Pubkey,
         accounts: &[AccountInfo],
         pool_tokens: u64,
