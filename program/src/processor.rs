@@ -395,7 +395,7 @@ impl Processor {
     }
 
     /// Issue a stake_deactivate instruction.
-    fn stake_deactivate<'a>(
+    pub fn stake_deactivate<'a>(
         stake_info: AccountInfo<'a>,
         clock_info: AccountInfo<'a>,
         authority_info: AccountInfo<'a>,
@@ -3107,7 +3107,7 @@ impl Processor {
 
     /// Processes [WithdrawStake](enum.Instruction.html).
     #[inline(never)] // needed to avoid stack size violation
-    fn process_withdraw_stake(
+    pub fn process_withdraw_stake(
         program_id: &Pubkey,
         accounts: &[AccountInfo],
         pool_tokens: u64,
