@@ -848,10 +848,6 @@ impl Processor {
                 return Err(StakePoolError::WrongMintingAuthority.into());
             }
 
-            if pool_mint.base.freeze_authority.is_some() {
-                return Err(StakePoolError::InvalidMintFreezeAuthority.into());
-            }
-
             let extensions = pool_mint.get_extension_types()?;
             if extensions
                 .iter()
@@ -3350,7 +3346,7 @@ impl Processor {
             withdraw_lamports,
             stake_split_to.clone(),
         )?;
-
+        
         Self::stake_authorize_signed(
             stake_pool_info.key,
             stake_split_to.clone(),
