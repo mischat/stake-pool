@@ -3346,7 +3346,7 @@ impl Processor {
             withdraw_lamports,
             stake_split_to.clone(),
         )?;
-        
+
         Self::stake_authorize_signed(
             stake_pool_info.key,
             stake_split_to.clone(),
